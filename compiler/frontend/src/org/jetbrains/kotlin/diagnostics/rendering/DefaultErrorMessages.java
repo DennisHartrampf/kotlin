@@ -753,6 +753,7 @@ public class DefaultErrorMessages {
 
         MAP.put(PROPERTY_TYPE_MISMATCH_ON_OVERRIDE, "Type of ''{0}'' is not a subtype of the overridden property ''{1}''",
                 NAME, FQ_NAMES_IN_TYPES);
+        //noinspection SpellCheckingInspection
         MAP.put(VAR_TYPE_MISMATCH_ON_OVERRIDE, "Type of ''{0}'' doesn''t match the type of the overridden var-property ''{1}''",
                 NAME, FQ_NAMES_IN_TYPES);
         MAP.put(PROPERTY_TYPE_MISMATCH_ON_INHERITANCE, "''{0}'' clashes with ''{1}'': property types are incompatible",

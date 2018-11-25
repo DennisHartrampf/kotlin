@@ -1006,7 +1006,7 @@ public class BodyResolver {
         if (deferredTypes.isEmpty()) {
             return;
         }
-        // +1 is a work around against new Queue(0).addLast(...) bug // stepan.koltsov@ 2011-11-21
+        // +1 is a work around against new Queue(0).addLast(...) bug
         Queue<DeferredType> queue = new Queue<>(deferredTypes.size() + 1);
         trace.addHandler(DEFERRED_TYPE, (deferredTypeKeyDeferredTypeWritableSlice, key, value) -> queue.addLast(key.getData()));
         for (Box<DeferredType> deferredType : deferredTypes) {

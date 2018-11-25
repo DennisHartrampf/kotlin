@@ -32,7 +32,7 @@ internal constructor(
 
     /**
      * This overload exists just for sake of optimizations: in some cases we've just retrieved the old value,
-     * so we don't need to scan through the persistent hashmap again
+     * so we don't need to scan through the persistent hash map again
      */
     fun put(key: VariableDescriptor, value: D, oldValue: D?): S {
         @Suppress("UNCHECKED_CAST")

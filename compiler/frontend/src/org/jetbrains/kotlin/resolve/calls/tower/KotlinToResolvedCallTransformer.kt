@@ -620,13 +620,13 @@ class NewResolvedCallImpl<D : CallableDescriptor>(
             TypeApproximator().approximateToSuperType(substituted, TypeApproximatorConfiguration.CapturedTypesApproximation) ?: substituted
         }
 
-        calculateExpedtedTypeForSamConvertedArgumentMap(substitutor)
+        calculateExpectedTypeForSamConvertedArgumentMap(substitutor)
     }
 
     fun getExpectedTypeForSamConvertedArgument(valueArgument: ValueArgument): UnwrappedType? =
         expedtedTypeForSamConvertedArgumentMap?.get(valueArgument)
 
-    private fun calculateExpedtedTypeForSamConvertedArgumentMap(substitutor: NewTypeSubstitutor?) {
+    private fun calculateExpectedTypeForSamConvertedArgumentMap(substitutor: NewTypeSubstitutor?) {
         if (resolvedCallAtom.argumentsWithConversion.isEmpty()) return
 
         expedtedTypeForSamConvertedArgumentMap = hashMapOf()

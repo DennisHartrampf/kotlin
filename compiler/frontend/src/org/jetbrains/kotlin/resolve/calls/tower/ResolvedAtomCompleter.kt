@@ -181,7 +181,7 @@ class ResolvedAtomCompleter(
     ) {
         val callableCandidate = resolvedAtom.candidate
         if (callableCandidate == null) {
-            // todo report meanfull diagnostic here
+            // todo report meaningful diagnostic here
             return
         }
         val resultTypeParameters =

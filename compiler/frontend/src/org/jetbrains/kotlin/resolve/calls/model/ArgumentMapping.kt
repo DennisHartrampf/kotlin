@@ -32,9 +32,9 @@ enum class ArgumentMatchStatus(val isError: Boolean = true) {
     TYPE_MISMATCH(),
     ARGUMENT_HAS_NO_TYPE(),
 
-    // The case when there is no type mismatch, but parameter has uninferred types:
+    // The case when there is no type mismatch, but parameter has not-inferred types:
     // fun <T> foo(l: List<T>) {}; val l = foo(emptyList())
-    MATCH_MODULO_UNINFERRED_TYPES(),
+    MATCH_MODULO_NOT_INFERRED_TYPES(),
 
     UNKNOWN()
 }

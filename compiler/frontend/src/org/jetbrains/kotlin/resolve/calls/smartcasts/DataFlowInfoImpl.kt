@@ -64,7 +64,7 @@ internal class DataFlowInfoImpl private constructor(
         nullability: Nullability,
         languageVersionSettings: LanguageVersionSettings,
         newTypeInfoBuilder: SetMultimap<DataFlowValue, KotlinType>? = null,
-        // XXX: set to false only as a workaround for OI, see KT-26357 for details (in NI everything works automagically)
+        // XXX: set to false only as a workaround for OI, see KT-26357 for details (in NI everything works automatically)
         recordUnstable: Boolean = true
     ) {
         if (value.isStable || recordUnstable) {

@@ -425,10 +425,10 @@ class FunctionDescriptorResolver(
                 }
             } else {
                 type = if (isFunctionLiteral(functionDescriptor) || isFunctionExpression(functionDescriptor)) {
-                    val containsUninferredParameter = TypeUtils.contains(expectedType) {
+                    val containsNotInferredParameter = TypeUtils.contains(expectedType) {
                         TypeUtils.isDontCarePlaceholder(it) || ErrorUtils.isUninferredParameter(it)
                     }
-                    if (expectedType == null || containsUninferredParameter) {
+                    if (expectedType == null || containsNotInferredParameter) {
                         trace.report(CANNOT_INFER_PARAMETER_TYPE.on(valueParameter))
                     }
 

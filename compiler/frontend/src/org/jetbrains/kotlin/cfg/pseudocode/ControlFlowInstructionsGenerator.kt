@@ -66,11 +66,11 @@ class ControlFlowInstructionsGenerator : ControlFlowBuilderAdapter() {
 
     override fun enterSubroutine(subroutine: KtElement, invocationKind: InvocationKind?) {
         val builder = builder
-        val shouldInlnie = invocationKind != null
+        val shouldInline = invocationKind != null
         if (builder != null && subroutine is KtFunctionLiteral) {
-            pushBuilder(subroutine, builder.returnSubroutine, shouldInlnie)
+            pushBuilder(subroutine, builder.returnSubroutine, shouldInline)
         } else {
-            pushBuilder(subroutine, subroutine, shouldInlnie)
+            pushBuilder(subroutine, subroutine, shouldInline)
         }
         delegateBuilder.enterBlockScope(subroutine)
         delegateBuilder.enterSubroutine(subroutine)

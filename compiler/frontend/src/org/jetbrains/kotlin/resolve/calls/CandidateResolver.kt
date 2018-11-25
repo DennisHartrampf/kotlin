@@ -370,7 +370,7 @@ class CandidateResolver(
                             resultingType = smartCast
                         }
                     } else if (ErrorUtils.containsUninferredParameter(expectedType)) {
-                        matchStatus = ArgumentMatchStatus.MATCH_MODULO_UNINFERRED_TYPES
+                        matchStatus = ArgumentMatchStatus.MATCH_MODULO_NOT_INFERRED_TYPES
                     }
 
                     val spreadElement = argument.getSpreadElement()

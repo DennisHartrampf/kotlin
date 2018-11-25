@@ -280,8 +280,8 @@ class PSICallResolver(
 
     private fun ResolvedCall<*>.recordResultInfo(trace: BindingTrace, moduleDescriptor: ModuleDescriptor) {
         if (this !is NewResolvedCallImpl) return
-        val resultDFIfromES = effectSystem.getDataFlowInfoForFinishedCall(this, trace, moduleDescriptor)
-        this.updateResultingDataFlowInfo(resultDFIfromES)
+        val resultDFInfoFromES = effectSystem.getDataFlowInfoForFinishedCall(this, trace, moduleDescriptor)
+        this.updateResultingDataFlowInfo(resultDFInfoFromES)
     }
 
     private fun ResolvedCall<*>.recordLambdasInvocations(trace: BindingTrace, moduleDescriptor: ModuleDescriptor) {

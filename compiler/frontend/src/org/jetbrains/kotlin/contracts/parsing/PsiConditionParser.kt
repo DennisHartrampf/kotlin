@@ -66,7 +66,7 @@ internal class PsiConditionParser(
         // boolean variable
         if (descriptor is ValueDescriptor) {
             val booleanVariable = dispatcher.parseVariable(element as? KtExpression) ?: return null
-            // we don't report type mismatch because it will be reported by the typechecker
+            // we don't report type mismatch because it will be reported by the type checker
             return booleanVariable as? BooleanVariableReference
         }
 
@@ -88,7 +88,7 @@ internal class PsiConditionParser(
     }
 
     override fun visitConstantExpression(expression: KtConstantExpression, data: Unit?): BooleanExpression? {
-        // we don't report type mismatch because it will be reported by the typechecker
+        // we don't report type mismatch because it will be reported by the type checker
         return dispatcher.parseConstant(expression) as? BooleanConstantReference
     }
 

@@ -76,14 +76,14 @@ private fun getParameterArgumentsOfCallableType(type: KotlinType) =
 fun getReturnTypeForCallable(type: KotlinType) =
     type.arguments.last().type
 
-private fun CallableDescriptor.hasReturnTypeDependentOnUninferredParams(constraintSystem: ConstraintSystem): Boolean {
+private fun CallableDescriptor.hasReturnTypeDependentOnNotInferredParams(constraintSystem: ConstraintSystem): Boolean {
     val returnType = returnType ?: return false
     val nestedTypeVariables = constraintSystem.getNestedTypeVariables(returnType)
     return nestedTypeVariables.any { constraintSystem.getTypeBounds(it).value == null }
 }
 
 fun CallableDescriptor.hasInferredReturnType(constraintSystem: ConstraintSystem): Boolean {
-    if (hasReturnTypeDependentOnUninferredParams(constraintSystem)) return false
+    if (hasReturnTypeDependentOnNotInferredParams(constraintSystem)) return false
 
     // Expected type mismatch was reported before as 'TYPE_INFERENCE_EXPECTED_TYPE_MISMATCH'
     if (constraintSystem.status.hasOnlyErrorsDerivedFrom(EXPECTED_TYPE_POSITION)) return false
